@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "242026316440",
+    "project_id": "hirexxo-apartmentfinder",
+    "storage_bucket": "hirexxo-apartmentfinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242026316440:android:cf512c2a38bc417f0e46ed",
+        "android_client_info": {
+          "package_name": "com.example.hirexxo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242026316440-ttpqqttkq39l5u0jvr6mmsj2fg590nkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOOIJIOn4yLjfjErPX7Dn5jNz2las8jdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242026316440-ttpqqttkq39l5u0jvr6mmsj2fg590nkr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

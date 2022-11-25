@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Hostel Finder', style: TextStyle(fontSize: 30)),
+              const Text('Hirexxo', style: TextStyle(fontSize: 30)),
               gap,
               const CircularProgressIndicator(),
             ],
