@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hirexxo/screen/login_screen.dart';
+import 'package:hirexxo/screen/signup_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -39,12 +41,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         color: Color.fromARGB(255, 13, 155, 100),
                         height: 60,
                         minWidth: double.infinity,
-                        onPressed: () {},
-                        //   Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //           builder: (context) => const LoginScreen()));
-                        // },
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()));
+                        },
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(
                             color: Color.fromARGB(255, 12, 173, 114),
@@ -66,14 +68,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         color: Color.fromARGB(255, 8, 150, 96),
                         height: 60,
                         minWidth: double.infinity,
-                        onPressed: () {},
-                        //      Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //           builder: (context) =>
-                        //               const RegisterScreen()));
-                        // },
-
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const RegistrationScreen()));
+                        },
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(
                             color: Color.fromARGB(255, 243, 219, 33),

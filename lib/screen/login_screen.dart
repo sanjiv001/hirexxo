@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hirexxo/screen/homescreen.dart';
 import 'package:hirexxo/screen/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -15,7 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // editing controller
+  // ignore: unnecessary_new
   final TextEditingController emailController = new TextEditingController();
+  // ignore: unnecessary_new
   final TextEditingController passwordController = new TextEditingController();
 
   // firebase
@@ -115,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                        height: 200,
+                        height: 280,
                         child: Image.asset(
                           "assets/images/background.jpg",
                           fit: BoxFit.contain,
@@ -130,14 +133,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text("Don't have an account? "),
+                          const Text("Don't have an account? "),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          RegistrationScreen()));
+                                          const RegistrationScreen()));
                             },
                             child: const Text(
                               "SignUp",
@@ -165,9 +168,9 @@ class _LoginScreenState extends State<LoginScreen> {
         await _auth
             .signInWithEmailAndPassword(email: email, password: password)
             .then((uid) => {
-                  // Fluttertoast.showToast(msg: "Login Successful"),
-                  // Navigator.of(context).pushReplacement(
-                  //     MaterialPageRoute(builder: (context) => HomeScreen())),
+                  Fluttertoast.showToast(msg: "Login Successful"),
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => HomeScreen())),
                 });
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
