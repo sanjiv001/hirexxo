@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hirexxo/theme/color.dart';
@@ -45,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     "Hello!",
                     style: TextStyle(
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "Sangvaleap",
+                    "Sanjiv",
                     style: TextStyle(
                         color: Colors.black87,
                         fontSize: 17,
@@ -82,7 +81,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Padding(
@@ -94,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                   hint: "Search",
                   prefix: Icon(Icons.search, color: Colors.grey),
                 )),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 IconBox(
@@ -105,21 +104,21 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
             margin: EdgeInsets.only(left: 0),
             child: listCategories(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
             margin: EdgeInsets.only(left: 15, right: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   "Popular",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -131,18 +130,18 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           listPopulars(),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
             margin: EdgeInsets.only(left: 15, right: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   "Recommended",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -154,18 +153,18 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           listRecommended(),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
             margin: EdgeInsets.only(left: 15, right: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   "Recent",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -177,11 +176,11 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           listRecent(),
-          SizedBox(
+          const SizedBox(
             height: 100,
           ),
         ],
