@@ -27,6 +27,12 @@ class _RootAppState extends State<RootApp> {
       "title": ""
     },
     {
+      "icon": Icons.add,
+      "active_icon": Icons.add_card_rounded,
+      "page": HomePage(),
+      "title": ""
+    },
+    {
       "icon": Icons.favorite_border,
       "active_icon": Icons.favorite_outlined,
       "page": HomePage(),
@@ -41,7 +47,7 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,
-      "page": HomePage(),
+      "page": Drawer(),
       "title": ""
     },
   ];
