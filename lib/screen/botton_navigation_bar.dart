@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hirexxo/screen/dashboard_sceen.dart';
 import 'package:hirexxo/screen/explore.dart';
+import 'package:hirexxo/screen/profilescreen.dart';
 import 'package:hirexxo/theme/color.dart';
 import 'package:hirexxo/widgets/bottombar_item.dart';
 
@@ -47,7 +48,7 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,
-      "page": Drawer(),
+      "page": ProfileScreen(),
       "title": ""
     },
   ];
