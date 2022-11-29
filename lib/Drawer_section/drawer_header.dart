@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hirexxo/models/user_model.dart';
 
 class MyDrawerHeader extends StatefulWidget {
   const MyDrawerHeader({Key? key}) : super(key: key);
@@ -8,6 +11,22 @@ class MyDrawerHeader extends StatefulWidget {
 }
 
 class _MyDrawerHeaderState extends State<MyDrawerHeader> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,10 +48,12 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
             ),
           ),
           const Text(
+            //"${loggedInUser.firstName} ${loggedInUser.secondName}""
             " HireXXo",
             style: TextStyle(color: Colors.white, fontSize: 30),
           ),
           const Text(
+            // "${loggedInUser.email}"
             " ssanjiv0001@gmail.con",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),

@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hirexxo/models/user_model.dart';
 import 'package:hirexxo/theme/color.dart';
 import 'package:hirexxo/utils/data.dart';
 import 'package:hirexxo/widgets/category_item.dart';
@@ -18,6 +21,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -53,6 +72,7 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
+                    //  "${loggedInUser.firstName} ${loggedInUser.secondName}"
                     "Sanjiv",
                     style: TextStyle(
                         color: Colors.black87,

@@ -40,12 +40,6 @@ class _RootAppState extends State<RootApp> {
       "title": ""
     },
     {
-      "icon": Icons.forum_outlined,
-      "active_icon": Icons.forum_rounded,
-      "page": HomePage(),
-      "title": ""
-    },
-    {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,
       "page": ProfileScreen(),

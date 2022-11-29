@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hirexxo/Drawer_section/drawer_header.dart';
 import 'package:hirexxo/models/user_model.dart';
 import 'package:hirexxo/screen/botton_navigation_bar.dart';
-import 'package:hirexxo/screen/dashboard_sceen.dart';
 import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -44,24 +43,30 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(0),
           children: [
             MyDrawerHeader(),
+            // ListTile(
+            //   leading: const Icon(Icons.dashboard_rounded),
+            //   title: const Text('Dashboard'),
+            //   onTap: () => Navigator.of(context).pushNamed('/home'),
+            // ),
+
             ListTile(
               leading: const Icon(Icons.dashboard_rounded),
-              title: const Text('Dashboard'),
-              onTap: () => Navigator.of(context).pushNamed('/home'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text(' My Profile '),
-              onTap: () => Navigator.of(context).pushNamed('/profile'),
+              title: const Text('Apartments List'),
+              onTap: () => Navigator.of(context).pushNamed('/lalitpur'),
             ),
             ListTile(
               leading: const Icon(Icons.dashboard_rounded),
-              title: const Text('HostelList'),
+              title: const Text('Building List'),
+              onTap: () => Navigator.of(context).pushNamed('/lalitpur'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.dashboard_rounded),
+              title: const Text('Rental Room List'),
               onTap: () => Navigator.of(context).pushNamed('/lalitpur'),
             ),
             ListTile(
               leading: const Icon(Icons.add_home),
-              title: const Text(' Add Hostel '),
+              title: const Text(' Add '),
               onTap: () => Navigator.of(context).pushNamed('/addhostel'),
             ),
             ListTile(
@@ -74,16 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: const Text(' Send Feedback '),
               onTap: () => Navigator.of(context).pushNamed('/feedback'),
             ),
-            ListTile(
-              leading: const Icon(Icons.privacy_tip_rounded),
-              title: const Text(' Privacy '),
-              onTap: () => Navigator.of(context).pushNamed('/privacy'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings_applications_rounded),
-              title: const Text('Setting'),
-              onTap: () => Navigator.of(context).pushNamed('/setting'),
-            ),
+
             ListTile(
               leading: const Icon(Icons.logout),
               title: const Text('LogOut'),
