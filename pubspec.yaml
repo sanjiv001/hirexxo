@@ -50,6 +50,13 @@ dependencies:
   animated_theme_switcher: ^2.0.7
   flutter_screenutil: ^5.6.0
   svg_icon: ^0.0.1
+  image_picker: ^0.8.6
+  firebase_storage: ^11.0.6
+  provider: ^6.0.4
+  floating_action_bubble: ^1.1.4
+  slider: ^0.0.1
+  animations: ^2.0.7
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:

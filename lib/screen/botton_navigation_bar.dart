@@ -74,10 +74,6 @@ class _RootAppState extends State<RootApp> {
       decoration: BoxDecoration(
           color: bottomBarColor,
           borderRadius: BorderRadius.circular(20),
-          // borderRadius: BorderRadius.only(
-          //   topLeft: Radius.circular(20),
-          //   topRight: Radius.circular(20)
-          // ),
           boxShadow: [
             BoxShadow(
                 color: shadowColor.withOpacity(0.1),

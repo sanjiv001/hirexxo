@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hirexxo/Add_screen/category.dart';
 import 'package:hirexxo/models/user_model.dart';
 import 'package:hirexxo/theme/color.dart';
 import 'package:hirexxo/utils/data.dart';
@@ -129,8 +130,17 @@ class _HomePageState extends State<HomePage> {
           ),
           Container(
             margin: EdgeInsets.only(left: 0),
-            child: listCategories(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Text(
+                  "Categories",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
+          const CategoryList(),
           const SizedBox(
             height: 20,
           ),
