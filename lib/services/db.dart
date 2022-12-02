@@ -1,30 +1,63 @@
-// import 'dart:io';
+import 'dart:io';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:hirexxo/models/apartment.dart';
+import 'package:hirexxo/models/user_model.dart';
+import 'package:path/path.dart' as Path;
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_storage/firebase_storage.dart';
-// import 'package:path/path.dart' as Path;
-// import 'package:cloud_firestore/cloud_firestore.dart';
+
+class DBServices {
+  final CollectionReference usercol =
+      FirebaseFirestore.instance.collection("user");
 
 
-// class DBServices {
-//   final CollectionReference usercol =
-//       FirebaseFirestore.instance.collection("users");
-//   final CollectionReference carouselcol =
-//       FirebaseFirestore.instance.collection("carousel");
-//   final CollectionReference vehiculecol =
-//       FirebaseFirestore.instance.collection("vehicule");
-//   final CollectionReference commentcol =
-//       FirebaseFirestore.instance.collection("commentaires");
+  final CollectionReference Buildingcol =
+      FirebaseFirestore.instance.collection("Building");    
 
-//   Future saveUser(UserM user) async {
-//     try {
-//       await usercol.doc(user.id).set(user.toMap());
-//       return true;
-//     } catch (e) {
-//       return false;
-//     }
-//   }
 
+  // final CollectionReference carouselcol =
+  //     FirebaseFirestore.instance.collection("carousel");
+
+  // final CollectionReference commentcol =
+  //     FirebaseFirestore.instance.collection("commentaires");
+
+  Future saveUser(UserModel user) async {
+    try {
+      await usercol.doc(user.uid).set(user.toMap());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+
+Future saveBuilding(Building building) async {
+    try {
+      await usercol.doc().set(building.toMap());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+
+  // Future<String?> uploadImage(File file, {String? path}) async {
+  //   var time = DateTime.now().toString();
+  //   var ext = Path.basename(file.path).split(".")[1].toString();
+  //   String image = path + "_" + time + "." + ext;
+  //   try {
+  //     StorageReference ref =
+  //         FirebaseStorage.instance.ref().child(path + "/" + image);
+  //     StorageUploadTask upload = ref.putFile(file);
+  //     await upload.onComplete;
+  //     return await ref.getDownloadURL();
+  //   } catch (e) {
+  //     return null;
+  //   }
+  // }
+
+
+  
 //   Future getUser(String id) async {
 //     try {
 //       final data = await usercol.doc(id).get();
@@ -54,20 +87,7 @@
 //         : null;
 //   }
 
-//   Future<String> uploadImage(File file, {String path}) async {
-//     var time = DateTime.now().toString();
-//     var ext = Path.basename(file.path).split(".")[1].toString();
-//     String image = path + "_" + time + "." + ext;
-//     try {
-//       StorageReference ref =
-//           FirebaseStorage.instance.ref().child(path + "/" + image);
-//       StorageUploadTask upload = ref.putFile(file);
-//       await upload.onComplete;
-//       return await ref.getDownloadURL();
-//     } catch (e) {
-//       return null;
-//     }
-//   }
+
 
 //   Future<List> get getCarouselImage async {
 //     try {
@@ -196,4 +216,4 @@
 //           .length;
 //     });
 //   }
-// }
+ }
