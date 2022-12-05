@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hirexxo/Add_screen/category.dart';
+import 'package:hirexxo/screen/Apartment_screen/category.dart';
 import 'package:hirexxo/models/user_model.dart';
 import 'package:hirexxo/theme/color.dart';
 import 'package:hirexxo/utils/data.dart';

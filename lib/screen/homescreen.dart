@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hirexxo/Drawer_section/drawer_header.dart';
+import 'package:hirexxo/screen/Drawer_section/drawer_header.dart';
 import 'package:hirexxo/models/user_model.dart';
 import 'package:hirexxo/screen/botton_navigation_bar.dart';
 import 'login_screen.dart';
@@ -43,12 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(0),
           children: [
             MyDrawerHeader(),
-            // ListTile(
-            //   leading: const Icon(Icons.dashboard_rounded),
-            //   title: const Text('Dashboard'),
-            //   onTap: () => Navigator.of(context).pushNamed('/home'),
-            // ),
-
+            //  Menu(),
             ListTile(
               leading: const Icon(Icons.dashboard_rounded),
               title: const Text('Apartments List'),

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hirexxo/models/apartment.dart';
 import 'package:hirexxo/services/db.dart';
 import 'package:hirexxo/utils/addscreen/getimage.dart';
+import 'package:hirexxo/utils/addscreen/loading.dart';
 
 class AddApartment extends StatefulWidget {
   @override
@@ -13,11 +16,17 @@ class AddApartment extends StatefulWidget {
 
 class _AddApartmentState extends State<AddApartment> {
   final key = GlobalKey<FormState>();
-  late String name, address,contact, price, descrition;
-  Building apartment = Building();
+  late String name, address, contact, price, description;
   List<File> images = [];
+  Building apartment = Building(
+      name: '',
+      address: '',
+      contact: '',
+      price: '',
+      images: [],
+      description: '',
+      type: ApartmentType.apartment);
 
-  
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -42,8 +51,8 @@ class _AddApartmentState extends State<AddApartment> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextFormField(
-                    validator: (e) => e!.isEmpty ? "Sanjiv" : null,
-                    onChanged: (e) => address = e,
+                    validator: (e) => e!.isEmpty ? "Sanjiv kushwaha" : null,
+                    onChanged: (e) => name = e,
                     decoration: InputDecoration(
                         hintText: "Enter Owner Full Name",
                         labelText: "Name",
@@ -54,8 +63,8 @@ class _AddApartmentState extends State<AddApartment> {
                     height: 10,
                   ),
                   TextFormField(
-                    validator: (e) => e!.isEmpty ? "Sanjiv" : null,
-                    onChanged: (e) => address = e,
+                    validator: (e) => e!.isEmpty ? "98564656743" : null,
+                    onChanged: (e) => contact = e,
                     decoration: InputDecoration(
                         hintText: "Enter Owner Contact No.",
                         labelText: "Contact No.",
@@ -66,7 +75,7 @@ class _AddApartmentState extends State<AddApartment> {
                     height: 10,
                   ),
                   TextFormField(
-                    validator: (e) => e!.isEmpty ? "Sanjiv" : null,
+                    validator: (e) => e!.isEmpty ? "ktm, Gyaneshwor" : null,
                     onChanged: (e) => address = e,
                     decoration: InputDecoration(
                         hintText: "Enter Full Address",
@@ -79,7 +88,7 @@ class _AddApartmentState extends State<AddApartment> {
                   ),
                   TextFormField(
                     keyboardType: TextInputType.number,
-                    validator: (e) => e!.isEmpty ? "Sanjiv" : null,
+                    validator: (e) => e!.isEmpty ? "1200" : null,
                     onChanged: (e) => price = e,
                     decoration: InputDecoration(
                         hintText: "Price",
@@ -91,8 +100,8 @@ class _AddApartmentState extends State<AddApartment> {
                     height: 10,
                   ),
                   TextFormField(
-                    validator: (e) => e!.isEmpty ? "Sanjiv" : null,
-                    onChanged: (e) => descrition = e,
+                    validator: (e) => e!.isEmpty ? "Details" : null,
+                    onChanged: (e) => description = e,
                     maxLines: 5,
                     decoration: InputDecoration(
                         hintText: "Détailed Information",
@@ -181,24 +190,26 @@ class _AddApartmentState extends State<AddApartment> {
                           apartment.name = name;
                           apartment.address = address;
                           apartment.price = price;
-                          apartment.detail = descrition;
+                          apartment.contact = contact;
+                          apartment.description = description;
                           apartment.images = [];
-                          apartment.uid = FirebaseAuth.instance.currentUser.uid;
+
                           for (var i = 0; i < images.length; i++) {
-                            String urlImage = await DBServices()
+                            String? urlImage = await DBServices()
                                 .uploadImage(images[i], path: "apartment");
-                            if (urlImage != null) apartment.images.add(urlImage);
+                            if (urlImage != null)
+                              apartment.images.add(urlImage);
                           }
                           if (images.length == apartment.images.length) {
-                            bool save = await DBServices().saveBuilding(apartment);
+                            bool save =
+                                await DBServices().savebuilding(apartment);
                             if (save) {
-                              Navigator.of(context).pop();
                               Navigator.of(context).pop();
                             }
                             ;
                           }
                         } else {
-                          print("veillez remplir tous les champs");
+                          print("nothing");
                         }
                       },
                       child: Container(

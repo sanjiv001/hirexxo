@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hirexxo/Add_screen/add_apartment.dart';
+import 'package:hirexxo/screen/Apartment_screen/add_apartment.dart';
 import 'package:hirexxo/screen/homescreen.dart';
 
 Future<void> main() async {
