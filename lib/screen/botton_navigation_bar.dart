@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hirexxo/screen/Apartment_screen/add_apartment.dart';
 import 'package:hirexxo/screen/dashboard_sceen.dart';
 import 'package:hirexxo/screen/explore.dart';
 import 'package:hirexxo/screen/profilescreen.dart';
@@ -30,7 +31,7 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.add,
       "active_icon": Icons.add_card_rounded,
-      "page": HomePage(),
+      "page": AddApartment(),
       "title": ""
     },
     {

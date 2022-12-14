@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hirexxo/screen/Apartment_screen/add_apartment.dart';
 import 'package:hirexxo/screen/homescreen.dart';
+import 'package:hirexxo/screen/welcome_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AddApartment(),
+      home: const WelcomeScreen(),
     );
   }
 }
